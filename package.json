@@ -19,12 +19,15 @@
     "security",
     "OWASP"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.72.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
     "express": "^4.13.4",
     "mocha": "^2.4.5",
+    "nock": "^8.0.0",
     "rewire": "^2.5.1",
     "supertest": "^1.2.0"
   },

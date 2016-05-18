@@ -1,9 +1,13 @@
-var request = require('supertest'),
+var supertest = require('supertest'),
     express = require('express'),
     chai    = require('chai'),
+    expect  = require('chai').expect,
     spies   = require('chai-spies'),
     rewire  = require('rewire'),
+    http    = require('http'),
+    request = require('request'),
     sqreen  = require('../../index.js');
+
 
 chai.use(spies);
 var sqreenInternals = rewire("../../lib/sqreen.js");
@@ -28,6 +32,30 @@ describe('apply rules', function() {
 });
 
 
+// simple http example
+
+describe('http get /', function() {
+    it('injects a header', function(done) {
+        function handleRequest(req, res) {
+            res.end('Hello, world!');
+        }
+
+        var server = http.createServer(handleRequest);
+
+        server.listen(9999); // another port for tests
+
+        request.get('http://localhost:9999', function (err, res, body){
+            expect(res.statusCode).to.equal(200);
+            expect(res.headers['x-instrumented-by']).to.equal('Sqreen'); // lowercase with request
+            expect(res.body).to.equal('Hello, world!');
+            done();
+        });
+    });
+});
+
+
+// same test with express, no need for port
+
 var app = express();
 
 app.get('/', function (req, res) {
@@ -36,7 +64,7 @@ app.get('/', function (req, res) {
 
 describe('GET /', function() {
     it('injects a header', function(done) {
-        request(app)
+        supertest(app)
             .get('')
             .expect('X-Instrumented-By', /Sqreen/)
             .expect(200, done);
