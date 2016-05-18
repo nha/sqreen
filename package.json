@@ -19,12 +19,14 @@
     "security",
     "OWASP"
   ],
-  "dependencies": {
-  },
-    "devDependencies": {
-        "mocha": "^2.4.5",
-        "supertest": "^1.2.0",
-        "express": "^4.13.4"
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "rewire": "^2.5.1",
+    "supertest": "^1.2.0"
   },
   "private": true,
   "license": "MIT"

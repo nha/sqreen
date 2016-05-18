@@ -1,7 +1,8 @@
-# To run the example
+# Run me
 
-to launch the example `node main.js`  `curl -I http://localhost:8888/`
-to run the tests: `npm test`
+- to launch the example `node sample.js`  `curl -I http://localhost:8888/`
+
+- to run the tests: `npm install` `npm test`
 
 
 # NodeJS software engineer job offer exercise
