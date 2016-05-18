@@ -9,5 +9,7 @@ function handleRequest(request, response) {
 }
 
 var server = http.createServer(handleRequest);
+var PORT = 8888;
 
-server.listen(8888);
+console.log('Starting server on port', PORT);
+server.listen(PORT);
