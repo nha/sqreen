@@ -3,6 +3,7 @@ var http = require('http'),
 
 
 function handleRequest(request, response) {
+    //response.setHeader("X-Instrumented-By", "Sqreen"); // we can't do that here though
     response.end('Hello, world!');
 }
 
