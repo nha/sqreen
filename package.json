@@ -1,0 +1,31 @@
+{
+  "name": "sqreen",
+  "version": "0.1.0",
+  "description": "Sqreen.io node.js agent",
+  "author": "Nicolas HA",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive --reporter spec",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nha/sqreen"
+  },
+  "bugs": {
+    "url": "https://github.com/nha/sqreen/issues"
+  },
+  "keywords": [
+    "sqreen",
+    "security",
+    "OWASP"
+  ],
+  "dependencies": {
+  },
+    "devDependencies": {
+        "mocha": "^2.4.5",
+        "supertest": "^1.2.0",
+        "express": "^4.13.4"
+  },
+  "private": true,
+  "license": "MIT"
+}
